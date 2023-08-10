@@ -18,3 +18,33 @@ document.onscroll = function() {
         console.log("loaded3");
     }
 }
+
+
+
+
+
+function toggle(){
+    const navbar = document.querySelector(".mobilenav");
+    navbar.classList.toggle("active");
+    document.querySelector("#container").classList.toggle("active");
+}
+
+
+
+function change_theme(){
+
+    var root = document.querySelector(":root");
+    if(document.querySelector("#theme").innerHTML == "light_mode"){
+        document.querySelector("#theme").innerHTML = "dark_mode";
+        root.style.setProperty('--light-cream-color', '#e9d7c5'); 
+        root.style.setProperty('--dark-cream-color', '#34302d'); 
+
+
+    }else{
+
+        document.querySelector("#theme").innerHTML = "light_mode";
+        root.style.setProperty('--light-cream-color', '#34302d'); 
+        root.style.setProperty('--dark-cream-color', '#e9d7c5'); 
+
+    }
+}

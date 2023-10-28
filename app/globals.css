@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+  html {
+    font-family: "Inter";
+  }
+}
+
+
+
+:root {
+  --text: #ffffff;
+  --background: #1B262C;
+  --primary: #3282B8;
+  --secondary: #0F4C75;
+  --accent: #BBE1FA;
+  --light-primary: #ceffce
+}
+
+
+body,
+html,
+:root {
+  font-family: "Inter";
+  color: var(--text);
+  background: var(--background);
+}
+
+::selection {
+  background-color: var(--primary);
+}
+
+.active,
+.clicked {
+  color: var(--primary);
+
+}
+
+
+.clicked {
+  background: var(--primary);
+  color: white;
+}
+
+.upper {
+  background: url('../assets/imgs/droidx-logo.jpeg');
+  background-size: cover;
+
+}
+
+
+.search_button {
+  padding: 10px;
+  border-radius: 10px;
+  padding-inline: 20px;
+  background: var(--secondary);
+  min-width: 60px;
+}
+
+
+
+
+
+/* CHANGELOG */
+
+
+
+
+/* CHANGELOG */
+#container {
+  height: 100%;
+  padding-top: 50px;
+  overflow-x: hidden;
+
+}
+
+
+.changelog_container {
+  width: 90%;
+  margin: 0px auto;
+  height: 100%;
+  background: black;
+  border-radius: 20px;
+}
+
+.head {
+  display: flex;
+
+  place-items: center;
+  width: 100%;
+  justify-content: space-between;
+  /* font-family: 'Courier New', Courier, monospace; */
+  padding: 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+  /* height: 10px; */
+  color: white;
+  background: rgb(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .head {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+}
+
+.user {
+  overflow: none;
+  color: var(--primary);
+  font-family: 'Courier New', Courier, monospace;
+  text-align: left;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.user span {
+  color: white;
+}
+
+
+
+li {
+  text-decoration: none;
+  list-style-type: none;
+  color: white;
+  margin-left: 20px;
+}
+
+.ul {
+  margin-left: 190px;
+
+
+  width: 80%;
+}
+
+
+
+
+.changelog_content {
+  font-family: Monospace;
+  font-size: 1rem;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  margin-left: 20px;
+  /* overflow-x: scroll; */
+
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  .ul {
+    margin-left: 0px;
+  }
+}

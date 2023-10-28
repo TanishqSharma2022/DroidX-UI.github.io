@@ -2,7 +2,7 @@ import { Octokit } from "octokit"
 
 export default async function Changelog() {
 
-  const octokit = new Octokit({auth: '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'})
+  const octokit = new Octokit({auth: process.env.GITHUB_TOKEN})
   // var client = new GitHubClient(new ProductHeaderValue("my-cool-app"));
 
     const data = await octokit.request("GET /repos/{owner}/{repo}/contents/{path}", {

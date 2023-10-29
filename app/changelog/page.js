@@ -57,3 +57,12 @@
 //     </main>
 //   )
 // }
+
+
+export default  function Changelog() {
+  return(
+    <>
+      Changelog page
+    </>
+  )
+}

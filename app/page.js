@@ -4,8 +4,8 @@ export default function Home() {
   return (
     <main className=" w-full h-full ">
       {/* <img src="assets/imgs/droid-logo.png" /> */}
-      <div className="  w-full h-[85vh]  ">
-        <div className=" relative md:left-[50%] left-[30%]  w-[50%] text-3xl md:text-6xl font-bold text-left h-[85vh] px-[80px] md:leading-[4.2rem] md:py-[100px]   ">
+      <div className="  w-full h-[90vh]  ">
+        <div className=" relative md:left-[50%] left-[0%] md:top-0 top-[30%] w-[100%] md:w-[50%] text-3xl md:text-6xl font-bold text-left h-[85vh] px-[80px] md:leading-[4.2rem] md:py-[100px]   ">
           Spice up your Android experience with{" "}
           <span className="text-primary">DroidX-UI</span>
         </div>
@@ -18,7 +18,7 @@ export default function Home() {
         </div> */}
       </div>
       <div className="bharosa flex justify-evenly items-center w-full md:p-12   text-2xl font-bold">
-        <div className="md:p-12 ">
+        <div className="md:p-12 py-12 ">
           <div className="text-primary md:text-5xl">30+</div>
           <div className="text-lg md:text-2xl  ">
             Supported

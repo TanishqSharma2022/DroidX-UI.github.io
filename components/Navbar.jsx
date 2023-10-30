@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import logo from "@/assets/imgs/droidx-logo.jpeg";
+
 import { Rotate as Hamburger } from 'hamburger-react'
 import { useState } from "react";
 
@@ -16,9 +16,9 @@ const [isOpen, setOpen] = useState(false)
     <>
       <div className={`w-full  md:h-[16vh] h-[10vh] font-inter flex items-center justify-between`}>
         <div className=" flex justify-center items-center  ">
-          <img src="@/assets/imgs/droid-logo.png" className="" />
+          <img src="/droid-logo.png" className="h-[50px] md:h-[70px] absolute top-4 md:top-5 left-5" />
         </div>
-        <nav className=" p-7  font-inter font-bold text-lg gap-12 font-xl flex items-center justify-end invisible md:visible">
+        <nav className=" p-7  font-inter font-semibold text-lg gap-12 font-xl flex items-center justify-end invisible md:visible">
         <Link
             href="/"
             className={pathName == "/" ? "active" : ""}
@@ -58,28 +58,28 @@ const [isOpen, setOpen] = useState(false)
           <Hamburger color="#3282B8" toggled={isOpen} toggle={setOpen} />
         </div>
       </div>
-      <div className={`w-full border h-[100vh] absolute transition-all z-10 bg-secondary ${isOpen ? "top-[10vh]" : "top-[-100%]"}`}>
+      <div className={`w-full  h-[100vh] absolute transition-all z-10 bg-secondary ${isOpen ? "top-[10vh]" : "top-[-100vh]"}`}>
       <nav className="font-inter font-bold text-2xl gap-6   flex flex-col text-center mt-10 ">
           <Link
             href="/about"
-            className={` rounded-full bg-primary text-gray-800  p-4  ${pathName == "/about" ? "active" : ""}`}
+            className={` rounded-full  text-white  p-4  ${pathName == "/about" ? "active" : ""}`}
           >
             About
           </Link>
           <Link
             href="/changelog"
-            className={` rounded-full bg-primary text-gray-800  p-4  ${pathName == "/changelog" ? "active" : ""}`}
+            className={` rounded-full  text-white  p-4  ${pathName == "/changelog" ? "active" : ""}`}
           >
             Changelog
           </Link>
           {/* <Link href='/changelog' className={pathName == '/changelog' ? "active" : ""}>Changelog</Link> */}
           <Link
             href="/blog"
-            className={` rounded-full bg-primary text-gray-800  p-4  ${pathName == "/blog" ? "active" : ""}`}
+            className={` rounded-full  text-white  p-4  ${pathName == "/blog" ? "active" : ""}`}
           >
             Blog
           </Link>
-          <Link href="/team" className={` rounded-full bg-primary text-gray-800  p-4  ${pathName == "/team" ? "active" : ""}`}
+          <Link href="/team" className={` rounded-full  text-white  p-4  ${pathName == "/team" ? "active" : ""}`}
           >
             Team
           </Link>

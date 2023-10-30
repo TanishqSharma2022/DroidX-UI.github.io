@@ -30,6 +30,7 @@ html,
   font-family: "Inter";
   color: var(--text);
   background: var(--background);
+  overflow-x: hidden;
 }
 
 ::selection {
@@ -58,7 +59,6 @@ html,
 .search_button {
   padding: 10px;
   border-radius: 10px;
-  padding-inline: 20px;
   background: var(--secondary);
   min-width: 60px;
 }
@@ -156,7 +156,7 @@ li {
   white-space: -o-pre-wrap;
   word-wrap: break-word;
   margin-left: 20px;
-  /* overflow-x: scroll; */
+  overflow-x: scroll;
 
 }
 
@@ -165,5 +165,8 @@ li {
 @media only screen and (max-width: 768px) {
   .ul {
     margin-left: 0px;
+  }
+  main{
+    width: 100%;
   }
 }

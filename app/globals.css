@@ -41,13 +41,15 @@ html,
 .clicked {
   color: var(--primary);
 
+
+}
+.toggle_categories{
+  color: var(--primary);
 }
 
 
-.clicked {
-  background: var(--primary);
-  color: white;
-}
+
+
 
 .upper {
   background: url('../assets/imgs/droidx-logo.jpeg');

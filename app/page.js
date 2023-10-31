@@ -1,10 +1,14 @@
 "use client";
 
+import { Fade } from "react-awesome-reveal";
+
 export default function Home() {
   return (
+
     <main className=" w-full h-full ">
-      {/* <img src="assets/imgs/droid-logo.png" /> */}
-      <div className="  w-full h-[90vh]  ">
+    <Fade>
+
+      <div className="  w-full  h-[75vh]    ">
         <div className=" relative md:left-[50%] left-[0%] md:top-0 top-[30%] w-[100%] md:w-[50%] text-3xl md:text-6xl font-bold text-left h-[85vh] px-[80px] md:leading-[4.2rem] md:py-[100px]   ">
           Spice up your Android experience with{" "}
           <span className="text-primary">DroidX-UI</span>
@@ -98,6 +102,9 @@ export default function Home() {
       <div className="w-full h-[60vh] p-12">
         <h1 className="text-3xl font-bold">And many things very soon....</h1>
       </div>
+    </Fade>
+
     </main>
+
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import Devices from "@/DeviceFiles/alldevices";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Fade, Slide } from "react-awesome-reveal";
 
 export default function Download() {
@@ -38,10 +38,11 @@ export default function Download() {
     var current = event.target;
     current.classList.add("toggle_categories");
   }
-
   return (
     <>
       <div>
+    
+        
         <Fade>
           <div className="w-full flex flex-col items-center justify-center text-center font-sans  text-5xl p-4 mt-4">
             <a className="font-bold ">Download DroidX-UI</a> <br></br>
@@ -53,6 +54,8 @@ export default function Download() {
             <input
               type="text"
               onChange={(e) => textSearch(e.target.value)}
+              onSubmit={(e) => textSearch(e.target.value)}
+
               className="mt-5 text-xl min-w-[300px] bg-secondary brightness-75 text-color p-4 rounded-full w-[50%] "
               placeholder="Find your device..."
             />
@@ -127,14 +130,20 @@ export default function Download() {
           </div>
         </Fade>
 
-        <div className="w-[100%] flex flex-col items-center justify-center">
-          <pre className="device_content grid grid-cols-1 gap-5 mt-5 md:grid-cols-2">
+        <div className="w-full flex flex-col items-center justify-center">
+        {!Device.length && (
+              <div className="font-sans  w-full text-3xl font-bold text-center p-12 mt-12">
+                Sorry, No device found.......
+              </div>
+            )}
+          <pre className="device_content grid grid-cols-1 gap-5 mt-5 md:grid-cols-2 place-items-center">
+           
             {Device.map((dev) => {
               const { id, name, codename, category, maintainer } = dev;
               return (
                 <Slide direction="up" triggerOnce={true}>
                   <div
-                    className="shadow-lg rounded-2xl max-w-[400px] min-w-[400px] w-[97%] min-h-[300px] bg-secondary p-4 "
+                    className="shadow-lg rounded-2xl max-w-[400px] min-w-[350px] w-[95%] min-h-[300px] bg-secondary p-4  "
                     key={id}
                   >
                     <div className="p-2 text-sm rounded-xl font-sans absolute bg-white text-primary">
@@ -142,8 +151,8 @@ export default function Download() {
                     </div>
                     <div className="upper bg-primary h-[200px]"></div>
                     <div className="relative h-full font-inter rounded-3xl align-baseline">
-                      <div className="  w-[100%]  p-5  relative ">
-                        <div className=" italic font-semibold">{codename}</div>
+                      <div className="  w-[100%]   relative ">
+                        <div className=" italic wrap-break font-semibold">{codename}</div>
 
                         <div className="break-words whitespace-nowrap w-full  font-bold text-3xl">
                           {name}

@@ -13,14 +13,16 @@
 }
 
 
-
+/* 1B262C */
 :root {
   --text: #ffffff;
   --background: #1B262C;
   --primary: #3282B8;
-  --secondary: #0F4C75;
+  --secondary: #030304;
   --accent: #BBE1FA;
-  --light-primary: #ceffce
+  --light-primary: #ceffce;
+  --darkersecondary: #06385a;
+
 }
 
 

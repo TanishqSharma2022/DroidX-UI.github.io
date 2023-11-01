@@ -22,6 +22,7 @@ export default function Download() {
       });
   }, []);
 
+
   const [Device, setDevice] = useState(data);
 
   const FilterItems = (cate) => {
@@ -174,17 +175,17 @@ export default function Download() {
                 version,
                 active,
                 device_clgl,
-                links,
+                Links,
                 status,
                 device_pic,
                 GitProfile,
                 position,
               } = dev;
               return (
-                <Slide direction="up" triggerOnce={true}>
+                <Slide key={model} direction="up" triggerOnce={true}>
                   <div
                     className="shadow-lg  rounded-2xl max-w-[400px] min-w-[350px] w-[95%] min-h-[300px] bg-secondary p-4  "
-                    key={codename}
+
                   >
                     <div className="p-2 text-sm rounded-xl font-sans absolute bg-white text-primary">
                       Latest
@@ -196,6 +197,7 @@ export default function Download() {
                       <div className="  w-[100%]   relative ">
                         <div className=" italic wrap-break font-semibold">
                           {codename}
+                          
                         </div>
 
                         <div className="break-words whitespace-nowrap w-full  font-bold text-3xl">
@@ -217,18 +219,31 @@ export default function Download() {
                               {co_maintainer_name}
                             </div>
                           </div>
-                          
                         </div>
                         
                         <div className=" mt-12 rounded-full mr-[10px] build_button  text-xl p-3 cursor-pointer bg-primary text-center  hover:brightness-50">
-                          <Link href={`download/${codename}`}>Get Build</Link>
-                          {/* <Route path={`/download/${codename}`} render={(props) => {
-   const id = props.match.params.codename;
-   const data =  Device.find((item) => item.codename === codename);
-   if(data) {
-       return <Page {...props} {...data} />
-   }
-}}  /> */}
+                          <Link  href={{pathname: `download/${codename}`,
+                          query: {
+                            codename: codename,
+                            vendor: vendor,
+                            model: model,
+                            maintainer_name: maintainer_name,
+                            co_maintainer_name: co_maintainer_name,
+                            BuildingTime: BuildingTime,
+                            last_updated: last_updated,
+                            version: version,
+                            active: active,
+                            device_clgl: device_clgl,
+                            Gapps: Links[0].Gapps,
+                            Vanilla: Links[0].Vanilla,
+                            status: status,
+                            device_pic: device_pic,
+                            GitProfile: GitProfile,
+                            position: position,
+                          }
+                          }
+                          }>Get Build</Link>
+                          
                         </div>
                       </div>
                     </div>

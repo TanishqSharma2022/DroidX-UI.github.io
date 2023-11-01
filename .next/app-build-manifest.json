@@ -21,6 +21,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/download/page.js"
+    ],
+    "/download/[codename]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/download/[codename]/page.js"
     ]
   }
 }

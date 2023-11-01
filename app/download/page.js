@@ -9,17 +9,17 @@ import Page from "./[codename]/page";
 export default function Download() {
 
   const [data, setData] = useState([])
-  // useEffect(() => {
-  //   fetch('https://raw.githubusercontent.com/DroidX-UI-Devices/Official_Devices/13/website.json')
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setData(data.devices)
-  //       setDevice(data.devices)
+  useEffect(() => {
+    fetch('https://raw.githubusercontent.com/DroidX-UI-Devices/Official_Devices/13/website.json')
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data.devices)
+        setDevice(data.devices)
 
-  //       console.log(data.devices)
-  //       // setLoading(false)
-  //     })
-  // }, [])
+        console.log(data.devices)
+        // setLoading(false)
+      })
+  }, [])
 
   const [Device, setDevice] = useState(data);
 
@@ -203,9 +203,9 @@ export default function Download() {
 
                           </div>
                         <div className=" mt-12 rounded-full mr-[10px] build_button  text-xl p-3 cursor-pointer bg-primary text-center  hover:brightness-50" >
-                          {/* <Link href={`download/${codename}`}>
+                          <Link href={`download/${codename}`}>
                           Get Build
-                          </Link> */}
+                          </Link>
                           {/* <Route path={`/download/${codename}`} render={(props) => {
    const id = props.match.params.codename;
    const data =  Device.find((item) => item.codename === codename);

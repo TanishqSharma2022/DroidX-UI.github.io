@@ -619,6 +619,9 @@ html {
 .h-\[10vh\]{
   height: 10vh;
 }
+.h-\[125px\]{
+  height: 125px;
+}
 .h-\[200px\]{
   height: 200px;
 }
@@ -642,18 +645,6 @@ html {
 }
 .h-full{
   height: 100%;
-}
-.h-\[250px\]{
-  height: 250px;
-}
-.h-\[100px\]{
-  height: 100px;
-}
-.h-\[150px\]{
-  height: 150px;
-}
-.h-\[125px\]{
-  height: 125px;
 }
 .min-h-\[300px\]{
   min-height: 300px;
@@ -885,17 +876,13 @@ html {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
-.py-\[100px\]{
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
-.py-4{
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
 .py-6{
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+.py-\[100px\]{
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 .pt-5{
   padding-top: 1.25rem;
@@ -1237,12 +1224,12 @@ li {
     grid-column: span 2 / span 2;
   }
 
-  .md\:flex{
-    display: flex;
-  }
-
   .md\:h-\[16vh\]{
     height: 16vh;
+  }
+
+  .md\:h-\[200px\]{
+    height: 200px;
   }
 
   .md\:h-\[70px\]{
@@ -1251,14 +1238,6 @@ li {
 
   .md\:h-\[80vh\]{
     height: 80vh;
-  }
-
-  .md\:h-\[250px\]{
-    height: 250px;
-  }
-
-  .md\:h-\[200px\]{
-    height: 200px;
   }
 
   .md\:w-\[100vh\]{
@@ -1305,16 +1284,16 @@ li {
     place-items: center;
   }
 
+  .md\:p-1{
+    padding: 0.25rem;
+  }
+
   .md\:p-12{
     padding: 3rem;
   }
 
   .md\:p-8{
     padding: 2rem;
-  }
-
-  .md\:p-1{
-    padding: 0.25rem;
   }
 
   .md\:px-\[100px\]{

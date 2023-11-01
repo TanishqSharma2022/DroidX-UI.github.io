@@ -62,7 +62,7 @@ export default function Navbar() {
               }`}
 
             >
-              <div class={` h-full w-full rounded-full  bg-gray-800 grid place-items-center hover:bg-gradient-to-r hover:from-darkersecondary hover:to-secondary 
+              <div className={` h-full w-full rounded-full  bg-gray-800 grid place-items-center hover:bg-gradient-to-r hover:from-darkersecondary hover:to-secondary 
               ${
                 pathName == "/download"
                   ? "bg-gradient-to-r from-secondary to-primary"

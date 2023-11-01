@@ -1,18 +1,34 @@
 "use client";
 
 import Devices from "@/DeviceFiles/alldevices";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Fade, Slide } from "react-awesome-reveal";
+import Page from "./[codename]/page";
 
 export default function Download() {
-  const [Device, setDevice] = useState(Devices);
+
+  const [data, setData] = useState([])
+  // useEffect(() => {
+  //   fetch('https://raw.githubusercontent.com/DroidX-UI-Devices/Official_Devices/13/website.json')
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setData(data.devices)
+  //       setDevice(data.devices)
+
+  //       console.log(data.devices)
+  //       // setLoading(false)
+  //     })
+  // }, [])
+
+  const [Device, setDevice] = useState(data);
 
   const FilterItems = (cate) => {
-    const updatedItems = Devices.filter((elem) => {
+    const updatedItems = data.filter((elem) => {
       if (cate == "") {
-        return elem.category;
+        return elem.vendor;
       } else {
-        return elem.category === cate;
+        return elem.vendor === cate;
       }
     });
     setDevice(updatedItems);
@@ -20,11 +36,22 @@ export default function Download() {
 
   const [search, textSearch] = useState("");
 
+//   if (search.length > 0) {
+//     setData(
+//         data.filter(elem =>
+//             elem.model.toLowerCase().includes(search.toLowerCase())
+//         )
+//     )
+// } else {
+//     setData(data)
+// }
+
   useEffect(() => {
-    const updatedItems = Devices.filter((elem) => {
+    const updatedItems = data.filter((elem) => {
       if (search == "") {
         return elem;
-      } else if (elem.name.toLowerCase().includes(search.toLowerCase())) {
+        // setData(data)
+      } else if (elem.model.toLowerCase().includes(search.toLowerCase())) {
         return elem;
       }
     });
@@ -84,11 +111,11 @@ export default function Download() {
               <button
                 className="search_button"
                 onClick={(event) => {
-                  FilterItems("Redmi");
+                  FilterItems("xiaomi");
                   changeColor(event);
                 }}
               >
-                Redmi
+                Xiaomi
               </button>
               <button
                 className="search_button"
@@ -130,8 +157,8 @@ export default function Download() {
           </div>
         </Fade>
 
-        <div className="w-full flex flex-col items-center justify-center">
-        {!Device.length && (
+        <div className="py-12 w-full flex flex-col items-center justify-center">
+        {!data.length && (
               <div className="font-sans  w-full text-3xl font-bold text-center p-12 mt-12">
                 Sorry, No device found.......
               </div>
@@ -139,12 +166,12 @@ export default function Download() {
           <pre className="device_content grid grid-cols-1 gap-5 mt-5 md:grid-cols-2 place-items-center">
            
             {Device.map((dev) => {
-              const { id, name, codename, category, maintainer } = dev;
+              const { codename, vendor, model, maintainer_name, comaintainer, BuildingTime, last_updated, version, active, device_changelog, links, status, device_pic, GitProfile, position } = dev;
               return (
                 <Slide direction="up" triggerOnce={true}>
                   <div
                     className="shadow-lg rounded-2xl max-w-[400px] min-w-[350px] w-[95%] min-h-[300px] bg-secondary p-4  "
-                    key={id}
+                    key={codename}
                   >
                     <div className="p-2 text-sm rounded-xl font-sans absolute bg-white text-primary">
                       Latest
@@ -155,15 +182,38 @@ export default function Download() {
                         <div className=" italic wrap-break font-semibold">{codename}</div>
 
                         <div className="break-words whitespace-nowrap w-full  font-bold text-3xl">
-                          {name}
+                          {model}
                         </div>
-
+<div className="w-full flex justify-between">
+  <div className="flex flex-col">
                         <div className="  pt-5">Maintainer:</div>
 
                         <div className=" text-2xl font-bold align-bottom ">
-                          {maintainer}
+                          {maintainer_name}
                         </div>
-                        {/* <div className="mr-[10px] build_button text-black text-xl p-3 cursor-pointer  hover:bg-gray-600 hover:text-white" href={"https://sourceforge.net/projects/droidxui-releases/files/" + codename}>Get Build</div> */}
+                        </div>
+                        <div className="flex flex-col">
+
+                        <div className="  pt-5">Co-Maintainer:</div>
+
+                          <div className=" text-2xl font-bold align-bottom ">
+                            {comaintainer}
+                          </div>
+                        </div>
+
+                          </div>
+                        <div className=" mt-12 rounded-full mr-[10px] build_button  text-xl p-3 cursor-pointer bg-primary text-center  hover:brightness-50" >
+                          {/* <Link href={`download/${codename}`}>
+                          Get Build
+                          </Link> */}
+                          {/* <Route path={`/download/${codename}`} render={(props) => {
+   const id = props.match.params.codename;
+   const data =  Device.find((item) => item.codename === codename);
+   if(data) {
+       return <Page {...props} {...data} />
+   }
+}}  /> */}
+                          </div>
                       </div>
                     </div>
                   </div>

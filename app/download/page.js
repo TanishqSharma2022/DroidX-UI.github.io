@@ -210,13 +210,16 @@ export default function Download() {
                             </div>
                           </div>
                           <div className="flex flex-col">
+                            {co_maintainer_name && (
                             <div className="  pt-5">Co-Maintainer:</div>
-
+                            )}
                             <div className="wrap-break text-xl font-bold align-bottom ">
                               {co_maintainer_name}
                             </div>
                           </div>
+                          
                         </div>
+                        
                         <div className=" mt-12 rounded-full mr-[10px] build_button  text-xl p-3 cursor-pointer bg-primary text-center  hover:brightness-50">
                           <Link href={`download/${codename}`}>Get Build</Link>
                           {/* <Route path={`/download/${codename}`} render={(props) => {

@@ -646,6 +646,9 @@ html {
 .h-full{
   height: 100%;
 }
+.h-\[100px\]{
+  height: 100px;
+}
 .min-h-\[300px\]{
   min-height: 300px;
 }
@@ -883,6 +886,10 @@ html {
 .py-\[100px\]{
   padding-top: 100px;
   padding-bottom: 100px;
+}
+.py-5{
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 .pt-5{
   padding-top: 1.25rem;

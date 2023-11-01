@@ -100,7 +100,7 @@ export default function Download() {
               <button
                 className="search_button"
                 onClick={(event) => {
-                  FilterItems("Realme");
+                  FilterItems("realme");
                   changeColor(event);
                 }}
               >
@@ -118,7 +118,7 @@ export default function Download() {
               <button
                 className="search_button"
                 onClick={(event) => {
-                  FilterItems("Samsung");
+                  FilterItems("samsung");
                   changeColor(event);
                 }}
               >
@@ -127,7 +127,7 @@ export default function Download() {
               <button
                 className="search_button"
                 onClick={(event) => {
-                  FilterItems("Oneplus");
+                  FilterItems("oneplus");
                   changeColor(event);
                 }}
               >
@@ -136,7 +136,7 @@ export default function Download() {
               <button
                 className="search_button"
                 onClick={(event) => {
-                  FilterItems("Poco");
+                  FilterItems("poco");
                   changeColor(event);
                 }}
               >
@@ -145,7 +145,7 @@ export default function Download() {
               <button
                 className="search_button"
                 onClick={(event) => {
-                  FilterItems("Motorola");
+                  FilterItems("motorola");
                   changeColor(event);
                 }}
               >

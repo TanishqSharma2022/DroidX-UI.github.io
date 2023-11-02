@@ -18,6 +18,7 @@ export default function Download() {
       .then((data) => {
         setData(data.devices);
         setDevice(data.devices);
+        console.log(data)
         setLoading(false)
       });
   }, []);

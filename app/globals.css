@@ -7,8 +7,18 @@
 
 
 @layer base {
-  html {
-    font-family: "Inter";
+  /* html {
+    font-family: "Gilmer";
+  } */
+  @font-face {
+    font-family: Gilmer;
+    font-weight: 400;
+    src: url(/fonts/Regular) format("otf");
+  }
+  @font-face {
+    font-family: Gilmer;
+    font-weight: 500;
+    src: url(/fonts/Medium.woff) format("otf");
   }
 }
 
@@ -18,10 +28,15 @@
   --text: #ffffff;
   --background: #1B262C;
   --primary: #3282B8;
-  --secondary: #030304;
+  /* --secondary: #030304; */
   --accent: #BBE1FA;
   --light-primary: #ceffce;
   --darkersecondary: #06385a;
+
+
+  --secondary: #0F4C75;
+
+
 
 }
 
@@ -46,7 +61,8 @@ html,
 
 }
 .toggle_categories{
-  color: var(--primary);
+  color: var(--text);
+  background: var(--secondary)
 }
 
 
@@ -62,9 +78,15 @@ html,
 
 .search_button {
   padding: 10px;
-  border-radius: 10px;
-  background: var(--secondary);
+  border-radius: 50px;
+  /* background: var(--secondary); */
   min-width: 60px;
+  border: 2px solid var(--secondary);
+  box-shadow: 0px 0px 5px black;
+}
+
+.search_button:hover{
+  background: var(--secondary)
 }
 
 

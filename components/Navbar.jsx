@@ -30,23 +30,23 @@ export default function Navbar() {
         </div>
         
         <nav className=" p-7  font-inter font-semibold text-lg gap-12 font-xl flex items-center justify-end invisible md:visible absolute top-0 right-5" >
-          <Link href="/" className={pathName == "/" ? "active" : ""} onClick={() => setProgress(100)}>
+          <Link href="/" className={`hover:text-primary ${pathName == "/" ? "active" : ""} `} onClick={() => setProgress(100)}>
             Home
           </Link>
-          <Link href="/about" className={pathName == "/about" ? "active" : ""} onClick={() => setProgress(100)}>
+          <Link href="/about" className={`hover:text-primary ${pathName == "/about" ? "active" : ""}`} onClick={() => setProgress(100)}>
             About
           </Link>
           <Link
             href="/changelog"
-            className={pathName == "/changelog" ? "active" : ""} onClick={() => setProgress(100)}
+            className={`hover:text-primary ${pathName == "/changelog" ? "active" : ""}`} onClick={() => setProgress(100)}
           >
             Changelog
           </Link>
-          {/* <Link href='/changelog' className={pathName == '/changelog' ? "active" : ""}>Changelog</Link> */}
-          <Link href="/blog" className={pathName == "/blog" ? "active" : ""} onClick={() => setProgress(100)}>
+          
+          <Link href="/blog" className={`hover:text-primary ${pathName == "/blog" ? "active" : ""}`} onClick={() => setProgress(100)}>
             Blog
           </Link>
-          <Link href="/team" className={pathName == "/team" ? "active" : ""} onClick={() => setProgress(100)}>
+          <Link href="/team" className={`hover:text-primary ${pathName == "/team" ? "active" : ""}`} onClick={() => setProgress(100)}>
             Team
           </Link>
           <Link

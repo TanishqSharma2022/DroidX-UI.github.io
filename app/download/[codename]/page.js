@@ -65,10 +65,10 @@ export default function Page({ searchParams }) {
               <div className="  py-6 grid grid-cols-2">
                 <div>
                   <button
-                    className={`bg-primary text-white text-lg p-4 rounded-full ${
+                    className={`bg-primary text-white border-2 text-sm font-bold p-4 rounded-full ${
                       searchParams.Gapps == ""
                         ? "brightness-50"
-                        : "brightness-100"
+                        : "brightness-100 hover:brightness-150"
                     }`}
                   >
                     <a href={searchParams.Gapps}>Gapps</a>
@@ -76,10 +76,10 @@ export default function Page({ searchParams }) {
                 </div>
                 <div>
                   <button
-                    className={`bg-primary text-white text-lg p-4 rounded-full ${
+                    className={`bg-primary text-white border-2 text-sm font-bold p-4 rounded-full ${
                       searchParams.Vanilla == ""
                         ? "brightness-50"
-                        : "brightness-100"
+                        : "brightness-100 hover:brightness-150"
                     }`}
                   >
                     <a href={searchParams.Vanilla}>Vanilla</a>

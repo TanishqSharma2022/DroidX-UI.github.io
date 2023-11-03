@@ -251,9 +251,9 @@ export default function Download() {
                               },
                             }}
                           >
-                            <div className=" mt-12 rounded-full mr-[10px] build_button  text-xl p-3 cursor-pointer bg-primary text-center  hover:brightness-50">
+                            <button className=" mt-12 rounded-full border-2 mr-[10px] build_button  text-sm p-3 cursor-pointer bg-primary text-center  hover:brightness-50">
                               Get Build
-                            </div>
+                            </button>
                           </Link>
                         </div>
                       </div>

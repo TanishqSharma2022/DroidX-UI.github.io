@@ -1,4 +1,4 @@
-// File: /Users/tanishqsharma/Documents/GitHub/DroidX-UI.github.io/app/layout.js
+// File: /workspaces/droidX-UI.github.io-1/app/layout.js
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

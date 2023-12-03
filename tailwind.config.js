@@ -16,14 +16,16 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        'inter': ['"Inter"'],
+        'gsans': ['Product Sans', 'sans-serif'],
         'sans': ['"Gilmer"', ...defaultTheme.fontFamily.sans],
+        'pj': ['Plus Jakarta Sans', 'serif']
+
       },
       colors: {
         text: "#ffffff",
         background: "#1B262C",
-        primary: "#3282B8",
-        secondary: "#0F4C75",
+        primary: "#011BF1",
+        secondary: "#011BF1",
         accent: "#BBE1FA",
         darkersecondary: "#06385a"
 

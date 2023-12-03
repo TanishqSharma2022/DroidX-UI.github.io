@@ -15,41 +15,48 @@ export default function Navbar() {
   const [progress, setProgress] = useState(0)
 
   return (
-    <>
-    <Fade>
+    <div className="font-pj z-[100]" >
+    {/* <Fade> */}
     <LoadingBar color="#3282B8" progress={progress} waitingTime={800} onLoaderFinished={() => setProgress(0)} shadow={true} />
 
       <div
-        className={`w-full  md:h-[16vh] h-[10vh] font-inter flex items-center justify-between`}
+        className={` z-100 backdrop-blur-lg bg-[#D9D9D9] bg-opacity-20 w-full md:h-[10vh] h-[10vh] font-pj flex items-center justify-between`}
       >
-        <div className=" flex justify-center items-center  ">
-          <img
+        <div className="  flex justify-center items-center  ">
+          <a className="text-white font-pj text-[25px] px-12">DroidX-UI</a>
+          {/* <img
             src="/ss/logo.svg"
             className="h-[50px] md:h-[70px] absolute top-4 md:top-5 left-5"
-          />
+          /> */}
         </div>
         
-        <nav className=" p-7  font-inter font-semibold text-lg gap-12 font-xl flex items-center justify-end invisible md:visible absolute top-0 right-5" >
-          <Link href="/" className={`hover:text-primary ${pathName == "/" ? "active" : ""} `} onClick={() => setProgress(100)}>
+        <nav className="font-pj px-5 py-5 text-black text-opacity-50 text-[25px] gap-6 font-[25px] flex items-center justify-center  invisible md:visible absolute top-0 right-5" >
+          <Link href="/" className={`hover:text-primary link  ${pathName == "/" ? "active" : ""} `} onClick={() => setProgress(100)}>
             Home
           </Link>
-          <Link href="/about" className={`hover:text-primary ${pathName == "/about" ? "active" : ""}`} onClick={() => setProgress(100)}>
+          <Link href="/about" className={`hover:text-primary link ${pathName == "/about" ? "active" : ""}`} onClick={() => setProgress(100)}>
             About
           </Link>
           <Link
             href="/changelog"
-            className={`hover:text-primary ${pathName == "/changelog" ? "active" : ""}`} onClick={() => setProgress(100)}
+            className={`hover:text-primary link ${pathName == "/changelog" ? "active" : ""}`} onClick={() => setProgress(100)}
           >
             Changelog
           </Link>
           
-          <Link href="/blog" className={`hover:text-primary ${pathName == "/blog" ? "active" : ""}`} onClick={() => setProgress(100)}>
+          <Link href="/blog" className={`hover:text-primary link ${pathName == "/blog" ? "active" : ""}`} onClick={() => setProgress(100)}>
             Blog
           </Link>
-          <Link href="/team" className={`hover:text-primary ${pathName == "/team" ? "active" : ""}`} onClick={() => setProgress(100)}>
+          <Link href="/team" className={`hover:text-primary link ${pathName == "/team" ? "active" : ""}`} onClick={() => setProgress(100)}>
             Team
           </Link>
-          <Link
+          <Link href="/download" className={`hover:text-primary link ${pathName == "/download" ? "active" : ""}`} onClick={() => setProgress(100)}>
+            Download
+          </Link>
+          <Link href="/contact" className={`hover:text-primary link ${pathName == "/team" ? "active" : ""}`} onClick={() => setProgress(100)}>
+            Contact
+          </Link>
+          {/* <Link
             href="/download"
             className={pathName == "/download" ? "active" : ""}
             onClick={() => setProgress(100)}
@@ -71,24 +78,24 @@ export default function Navbar() {
    
    </div>
             </button>
-          </Link>
+          </Link> */}
         </nav>
         <div className="absolute right-5 top-3  md:invisible visible  ">
-          <Hamburger color="#3282B8" toggled={isOpen} toggle={setOpen} />
+          <Hamburger color="#011BF1" toggled={isOpen} toggle={setOpen} />
         </div>
       </div>
-      </Fade>
+      {/* </Fade> */}
 
       <div
-        className={`w-full  h-[100vh] absolute transition-all z-50 bg-secondary ${
+        className={`w-full  h-[100vh] absolute transition-all z-[100] backdrop-blur-lg bg-[#D9D9D9] bg-opacity-80  ${
           isOpen ? "top-[10vh]" : "top-[-100vh]"
         }`}
       >
 
-        <nav className="font-inter font-bold text-2xl gap-6  flex flex-col text-center mt-10 z-50 ">
+        <nav className="font-pj font-bold text-4xl gap-6  flex flex-col text-center mt-10 z-[100] ">
         <Link
             href="/"
-            className={` rounded-full  text-white  p-4  ${
+            className={` rounded-full  text-white link p-4  ${
               pathName == "/" ? "active" : ""
             }`}
             onClick={() => setOpen(!isOpen)}
@@ -97,7 +104,7 @@ export default function Navbar() {
           </Link>
           <Link
             href="/about"
-            className={` rounded-full  text-white  p-4  ${
+            className={` rounded-full  text-white link p-4  ${
               pathName == "/about" ? "active" : ""
             }`}
             onClick={() => setOpen(!isOpen)}
@@ -106,7 +113,7 @@ export default function Navbar() {
           </Link>
           <Link
             href="/changelog"
-            className={` rounded-full  text-white  p-4  ${
+            className={` rounded-full  text-white link p-4  ${
               pathName == "/changelog" ? "active" : ""
             }`}
             onClick={() => setOpen(!isOpen)}
@@ -117,7 +124,7 @@ export default function Navbar() {
           
           <Link
             href="/blog"
-            className={` rounded-full  text-white  p-4  ${
+            className={` rounded-full  text-white link p-4  ${
               pathName == "/blog" ? "active" : ""
             }`}
             onClick={() => setOpen(!isOpen)}
@@ -126,7 +133,7 @@ export default function Navbar() {
           </Link>
           <Link
             href="/team"
-            className={` rounded-full  text-white  p-4  ${
+            className={` rounded-full  text-white link p-4  ${
               pathName == "/team" ? "active" : ""
             }`}
             onClick={() => setOpen(!isOpen)}
@@ -135,16 +142,26 @@ export default function Navbar() {
           </Link>
           <Link
             href="/download"
-            className={`col-span-2 ${pathName == "/download" ? "active" : ""}`}
+            className={` rounded-full  text-white link p-4  ${
+              pathName == "/download" ? "active" : ""
+            }`}
             onClick={() => setOpen(!isOpen)}
           >
-            <button className="p-4  border rounded-xl border-primary hover:bg-secondary hover:text-white">
-              Try DroidX-UI
-            </button>
+            Download
           </Link>
+          <Link
+            href="/download"
+            className={` rounded-full  text-white link p-4  ${
+              pathName == "/contact" ? "active" : ""
+            }`}
+            onClick={() => setOpen(!isOpen)}
+          >
+            Contact
+          </Link>
+          
         </nav>
       </div>
-    </>
+    </div>
   );
 }
 

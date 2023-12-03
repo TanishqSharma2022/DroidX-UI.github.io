@@ -1,8 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
 
 
 
@@ -20,21 +23,37 @@
     font-weight: 500;
     src: url(/fonts/Medium.woff) format("otf");
   }
+  @font-face {
+    font-family: Product Sans;
+    font-weight: 400;
+    src: url(/fonts/gsans/ProductSans-Regular.woff) format("otf");
+  }
+  @font-face {
+    font-family: Product Sans;
+    font-weight: 500;
+    src: url(/fonts/gsans/ProductSans-Medium.woff) format("otf");
+  }
+  @font-face {
+    font-family: Google Sans;
+    font-weight: 500;
+    src: url(/fonts/gsansr.ttf) format("otf");
+  }
+
 }
 
 
 /* 1B262C */
 :root {
-  --text: #ffffff;
-  --background: #1B262C;
-  --primary: #3282B8;
+  --text: #000000;
+  --background: #ffffff;
+  --primary: #011BF1;
   /* --secondary: #030304; */
   --accent: #BBE1FA;
   --light-primary: #ceffce;
   --darkersecondary: #06385a;
 
 
-  --secondary: #0F4C75;
+  --secondary: #011BF1;
 
 
 
@@ -44,7 +63,6 @@
 body,
 html,
 :root {
-  font-family: "Inter";
   color: var(--text);
   background: var(--background);
   overflow-x: hidden;
@@ -57,8 +75,59 @@ html,
 .active,
 .clicked {
   color: var(--primary);
+  position: relative;
+     
+  width: fit-content;
+transform-origin: left;
+}
 
+.link::after{
+  position: absolute;
+  content: '';
+  height: 2px;
+/* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
+  bottom: -4px; 
+  margin: 0 auto;
+left: 0;
+  right: 0;
+width: 0%;
+background: var(--primary);
 
+/* optional animation */
+-o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+.active::after{
+  position: absolute;
+  content: '';
+  height: 5px;
+/* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
+  bottom: -4px; 
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: var(--primary);
+
+/* optional animation */
+-o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+.link{
+  position: relative;   
+  width: fit-content;
+  transform-origin: left;
+}
+.link:hover:after {
+      width: 80%;
+		  background: var(--primary);
 }
 .toggle_categories{
   color: var(--text);
@@ -194,5 +263,50 @@ li {
   }
   main{
     width: 100%;
+  }
+}
+
+
+
+
+
+.logo{
+  animation: logo 5s ease-in-out infinite;
+}
+
+@keyframes logo{
+  0%{
+    transform: translateY(0px);
+
+    transform: scale(1);
+  }
+  50%{
+    transform: translateY(-20px);
+    transform: scale(1.05);
+  }
+  100%{
+    transform: scale(1);
+    transform: translateY(0px);
+
+  }
+}
+
+.blb{
+  z-index: 0;
+  margin-top: -200px;
+}
+
+.mob{
+  animation: mob 5s ease-in-out infinite;
+}
+@keyframes mob{
+  0%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(-20px);
+  }
+  100%{
+    transform: translateY(0px);
   }
 }

@@ -188,14 +188,15 @@ export default function Download() {
                 position,
               } = dev;
               return (
-                <Fade key={model}>
+                // <Fade key={model}><>
+                <div>
                   {model && (
-                    <div className=" shadow-lg col-start-1  rounded-2xl max-w-[400px] min-w-[350px] w-[95%] min-h-[300px]  bg-secondary p-4   ">
+                    <div className=" shadow-lg col-start-1  rounded-2xl max-w-[400px]  min-w-[350px] w-[95%] min-h-[300px]  bg-secondary p-4   ">
                       <div className="p-2 text-sm rounded-3xl backdrop-blur-lg font-sans absolute bg-white/60 text-secondary shadow-xl">
                         Latest
                       </div>
-                      <div className=" upper flex justify-center bg-secondary h-[200px]">
-                        <img className="h-full py-2" src={device_pic} />
+                      <div className=" upper  flex justify-center bg-secondary h-[200px]">
+                        <img className="h-full py-2 " src={device_pic} />
                       </div>
                       <div className=" py-2 relative h-full font-inter rounded-2xl align-baseline">
                         <div className="  w-[100%] relative  px-4 text-left">
@@ -207,7 +208,7 @@ export default function Download() {
                             {model}
                           </div>
                           <div className="w-full grid grid-cols-2 ">
-                            <div className="flex flex-col">
+                            <div className=" flex flex-col">
                               <div className="text-[16px]   pt-5">
                                 Maintainer:
                               </div>
@@ -251,15 +252,16 @@ export default function Download() {
                               },
                             }}
                           >
-                            <div className=" mt-12 rounded-full mr-[10px] build_button  text-xl p-3 cursor-pointer bg-primary text-center  hover:brightness-50">
+                            <button className=" mt-12 rounded-full mr-[10px] build_button  text-xl p-3 cursor-pointer bg-primary text-center  hover:brightness-50">
                               Get Build
-                            </div>
+                            </button>
                           </Link>
                         </div>
                       </div>
                     </div>
                   )}
-                </Fade>
+                {/* </Fade> */}
+                </div>
               );
             })}
           </div>
